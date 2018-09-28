@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log,./yarn.lock,./package-lock.json --copy-files",
+    "db:sync": "node dist/database/sync.js",
     "start": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boanergepro/api-bmkeros-inventory"
+  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Antony Carrizo (BMKeros)",
+  "license": "MIT",
   "dependencies": {
+    "babel-plugin-transform-async-generator-functions": "^6.24.1",
+    "bcrypt-nodejs": "^0.0.3",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
+    "jwt-simple": "^0.5.3",
+    "moment": "^2.22.2",
     "morgan": "^1.9.1",
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
